@@ -12,6 +12,11 @@ class RegisterController extends Controller
         return view("index")->with(['tasks' => $task->get()]); //カレンダー画面表示
     }
     
+    public function show(Task $task)
+    {
+        return view('show')->with(['tasks' => $task]);//詳細画面表示
+    }
+    
     public function register()
     {
         return view('register');//登録画面表示
@@ -20,7 +25,7 @@ class RegisterController extends Controller
     public function store(Request $request, Task $task)
     {
     $input = $request['register'];
-    $task->fill($input)->save();
-    return redirect('/schedules/' . $task->id);//登録保存
+    $task->fill($input)->save();//登録保存
+    return redirect('/');
     }
 }
