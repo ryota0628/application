@@ -9,8 +9,10 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
+        <p class="edit">[<a href="/schedules/{{ $task->id }}/edit">edit</a>]</p><!--編集ページへのリンク-->
+        
         <h1 class="date">
-            {{ $task->votes }}
+            {{$task->votes}}
         </h1>
         <h2 class="title">
             {{ $task->theme }}
