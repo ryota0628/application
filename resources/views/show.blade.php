@@ -11,6 +11,12 @@
     <body>
         <p class="edit">[<a href="/schedules/{{ $task->id }}/edit">edit</a>]</p><!--編集ページへのリンク-->
         
+        <form action="/schedules/{{ $task->id }}" id="form_{{ $task->id }}" method="post" style="display:inline">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onclick="deletePost()">delete</button>
+        </form>
+        
         <h1 class="date">
             {{$task->votes}}
         </h1>

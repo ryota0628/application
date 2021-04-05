@@ -11,14 +11,17 @@
             <div class="date">
                 <h2>いつ</h2>
                 <input type="number" name="register[votes]" placeholder="日付を数字のみ入力"/>
+                <p class="votes__error" style="color:red">{{ $errors->first('register.votes') }}</p>
             </div>
             <div class="title">
                 <h2>テーマ</h2>
                 <input type="text" name="register[theme]" placeholder="テーマ"/>
+                <p class="theme__error" style="color:red">{{ $errors->first('register.theme') }}</p>
             </div>
             <div class="body">
                 <h2>予定</h2>
                 <textarea name="register[description]" placeholder="予定を入力"></textarea>
+                <p class="description__error" style="color:red">{{ $errors->first('register.description') }}</p>
             </div>
             <input type="submit" value="保存"/>
         </form>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Task;
-use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 
 class RegisterController extends Controller
 {
@@ -25,7 +25,7 @@ class RegisterController extends Controller
         return view('register');//登録画面表示
     }
     
-    public function store(Request $request, Task $task)
+    public function store(Task $task, PostRequest $request)
     {
     $input = $request['register'];
     $task->fill($input)->save();//登録保存
@@ -37,10 +37,16 @@ class RegisterController extends Controller
     return view("edit")->with(['task' => $task]);//編集画面表示
     }
     
-    public function update(Request $request, Task $task)
+    public function update(PostRequest $request, Task $task)
     {
     $input_register = $request['register'];
     $task->fill($input_register)->save();//編集機能
     return redirect('/schedules/' . $task->id);
     }
+    
+    public function delete(Task $task)
+{
+    $task->delete();
+    return redirect('/');
+}
 }
