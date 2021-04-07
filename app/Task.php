@@ -10,7 +10,7 @@ class Task extends Model
     use SoftDeletes;
     
     protected $fillable = [
-    'votes',
+    'date',
     'theme',
     'description',
     ];

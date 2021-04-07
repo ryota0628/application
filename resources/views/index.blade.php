@@ -17,7 +17,7 @@
        <div class='posts'>
             @foreach ($tasks as $task)
                 <div class='post'>
-                    <h1><a href="/schedules/{{$task->id}}">{{ $task->votes }}</a>
+                    <h1><a href="/schedules/{{$task->id}}">{{ $task->date }}</a>
                     <h2 class='title'>{{ $task->theme }}</h2>
                     <p class='body'>{{ $task->description }}</p>
                 </div>

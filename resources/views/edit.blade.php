@@ -12,8 +12,7 @@
             @method('PUT')
             <div class="date">
                 <h2>いつ</h2>
-                <input type="number" name="register[votes]" value="{{ $task->votes }}" >
-                <p class="votes__error" style="color:red">{{ $errors->first('register.votes') }}</p>
+                <input type="date" name="register[date]" value="{{ $task->date }}" >
             </div>
             <div class="title">
                 <h2>テーマ</h2>

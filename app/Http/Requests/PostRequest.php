@@ -9,8 +9,7 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            'register.votes' => 'required|integer|max:40',
-            'register.theme' => 'required|string|max:300',
+            'register.theme' => 'required|string|max:30',
             'register.description' => 'required|string|max:1000',
         ];
     }

@@ -18,7 +18,7 @@
         </form>
         
         <h1 class="date">
-            {{$task->votes}}
+            {{$task->date}}
         </h1>
         <h2 class="title">
             {{ $task->theme }}
