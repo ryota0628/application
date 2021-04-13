@@ -14,4 +14,10 @@ class Task extends Model
     'theme',
     'description',
     ];
+    
+    public function getId($day){
+     
+        $data=$this->where('date',$day)->get();
+        return $data['id'];
+    }
 }

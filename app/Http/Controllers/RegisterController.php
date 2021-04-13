@@ -9,7 +9,7 @@ class RegisterController extends Controller
 {
     public function index(Task $task)
     {
-        return view("index")->with(['tasks' => $task->get()]); //カレンダー画面表示
+       return view("index")->with(['tasks' => $task->get()]); //カレンダー画面表示
         //     viewのファイル名　　　viewに渡す変数名(tasks)に、データを代入(get())したインスタンス($task)を持たせる。
         //                           変数名はviewの変数名と対応させる!
     }

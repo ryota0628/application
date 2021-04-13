@@ -8,12 +8,7 @@
     </head>
     <body>
         [<a href='/schedules/register'>登録</a>]<!--登録ページへのリンク-->
-       @for ($i=1; $i <= 31 ; $i++) 
-       <div>
-          {{$i}}日
-       </div>
-       @endfor
-       
+      
        <div class='posts'>
             @foreach ($tasks as $task)
                 <div class='post'>
