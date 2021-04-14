@@ -12,4 +12,5 @@
        </div>
    </div>
 </div>
+<a href='/schedules/register' style="font-size:30pt;font-weight:bold;"><center>[予定登録はこちら]<center></a><!--登録ページへのリンク-->
 @endsection

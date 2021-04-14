@@ -6,7 +6,7 @@ use app\Task;
 
 class CalendarView {
 	
-	private $carbon;
+	public $carbon;
 
 	function __construct($date){
 		$this->carbon = new Carbon($date);
@@ -73,9 +73,12 @@ class CalendarView {
 			$days = $week->getDays();
 			foreach($days as $day){
 				$html[] = '<td class="'.$day->getClassName().'">';
-				$html[] = '<a href="/schedules/{{$task->id}}">';//{{$task->id}}の表示が実際のurl見るとおかしい。うまく反映されてない
-				//'<a href="/schedules/" "'.$task->id.'">'でやると「$taskが定義されていない」エラーと出る
+	
+				$day->carbon->format('Y-m-d');
+				
+				//$html[] = '<a href="/schedules/'.$task->id.'">';をつける
 				$html[] = $day->render();
+				//$html[] = '</a>';
 				$html[] = '</td>';
 			}
 			$html[] = '</tr>';

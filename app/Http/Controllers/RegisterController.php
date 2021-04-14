@@ -7,9 +7,9 @@ use App\Http\Requests\PostRequest;
 
 class RegisterController extends Controller
 {
-    public function index(Task $task)
+    public function index(Task $task)//このメソッドは不要になるかも
     {
-       return view("index")->with(['tasks' => $task->get()]); //カレンダー画面表示
+       return view("index")->with(['tasks' => $task->get()]); 
         //     viewのファイル名　　　viewに渡す変数名(tasks)に、データを代入(get())したインスタンス($task)を持たせる。
         //                           変数名はviewの変数名と対応させる!
     }
@@ -40,7 +40,7 @@ class RegisterController extends Controller
     public function update(PostRequest $request, Task $task)
     {
     $input_register = $request['register'];
-    $task->fill($input_register)->save();//編集機能
+    $task->fill($input_register)->save();//編集したのをセーブする
     return redirect('/schedules/' . $task->id);
     }
     

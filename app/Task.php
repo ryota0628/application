@@ -19,5 +19,7 @@ class Task extends Model
      
         $data=$this->where('date',$day)->get();
         return $data['id'];
+        //修正入る
+        //→ if文使って、$dayの文字列とテーブルのdateの文字列が合致したら、該当テーブルのidを出力する
     }
 }
