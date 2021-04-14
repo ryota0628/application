@@ -16,7 +16,6 @@ class Task extends Model
     ];
     
     public function getId($day){
-     
         $data=$this->where('date',$day)->get();
         return $data['id'];
         //修正入る
