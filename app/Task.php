@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+
 class Task extends Model
 {
     use SoftDeletes;
@@ -15,10 +16,16 @@ class Task extends Model
     'description',
     ];
     
-    public function getId($day){
-        $data=$this->where('date',$day)->get();
-        return $data['id'];
-        //修正入る
-        //→ if文使って、$dayの文字列とテーブルのdateの文字列が合致したら、該当テーブルのidを出力する
+    public static function getId($day){
+        
+        $data=self::where('date',$day)->get();//$dayには$day->carbon->format('Y-m-d')が代入される。calendarViewでその処理をしている。
+        dd($data);
+        
+        if ($data === null) {
+             return 'register';
+        }
+        else{
+            return $data['id'];//2重配列の取り出し方にする
+        }
     }
 }

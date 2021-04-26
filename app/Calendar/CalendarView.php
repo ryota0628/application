@@ -2,7 +2,7 @@
 namespace App\Calendar;
 
 use Carbon\Carbon;
-use app\Task;
+use App\Task;
 
 class CalendarView {
 	
@@ -74,11 +74,10 @@ class CalendarView {
 			foreach($days as $day){
 				$html[] = '<td class="'.$day->getClassName().'">';
 	
-				$day->carbon->format('Y-m-d');
-				
-				//$html[] = '<a href="/schedules/'.$task->id.'">';をつける
+				$html[] = '<a href="/schedules/'.Task::getId($day->carbon->format('Y-m-d')).'">';
 				$html[] = $day->render();
-				//$html[] = '</a>';
+				$html[] = '</a>';
+				
 				$html[] = '</td>';
 			}
 			$html[] = '</tr>';
