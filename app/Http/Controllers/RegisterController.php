@@ -7,13 +7,7 @@ use App\Http\Requests\PostRequest;
 
 class RegisterController extends Controller
 {
-    public function index(Task $task)//このメソッドは不要になるかも
-    {
-       return view("index")->with(['tasks' => $task->get()]); 
-        //     viewのファイル名　　　viewに渡す変数名(tasks)に、データを代入(get())したインスタンス($task)を持たせる。
-        //                           変数名はviewの変数名と対応させる!
-    }
-    
+
     public function show(Task $task)
     {
         return view('show')->with(['task' => $task]);//詳細画面表示

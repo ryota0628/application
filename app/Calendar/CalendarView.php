@@ -48,6 +48,18 @@ class CalendarView {
 		return $weeks;
 	}
 
+/**
+	 * 次の月
+	 */
+	public function getNextMonth(){
+		return $this->carbon->copy()->addMonthsNoOverflow()->format('Y-m');
+	}
+	/**
+	 * 前の月
+	 */
+	public function getPreviousMonth(){
+		return $this->carbon->copy()->subMonthsNoOverflow()->format('Y-m');
+	}
 
 	function render(){
 		$html = [];
