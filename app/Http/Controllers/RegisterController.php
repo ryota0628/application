@@ -39,8 +39,8 @@ class RegisterController extends Controller
     }
     
     public function delete(Task $task)
-{
+    {
     $task->delete();
     return redirect('/');//削除機能
-}
+    }
 }
